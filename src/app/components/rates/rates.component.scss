@@ -1,0 +1,51 @@
+  td, th {
+  border: 1px solid black;
+  border-collapse: separate;
+  border-radius: 10px;
+}
+
+  .inputValues {
+    box-sizing: border-box;
+    background-color: white;
+    width: 230px;
+    height: 55px;
+    border-radius: 12px;
+    border-color: gray;
+    box-shadow: rgb(0 17 51 / 5%) 0 3px 15px;
+  }
+
+  .arrowImage {
+    &:hover {
+      cursor: pointer;
+    }
+    border: 1px solid gray;
+    width: 53px;
+    border-radius: 283px;
+    height: 54px;
+    margin-top: 23px;
+    margin-right: 62px;
+    align-items: center;
+  }
+
+  .convertButton {
+    &:hover {
+      background-color: blue;
+      color: white;
+      transition: ease-in-out 0.5s;
+    }
+    width: 160px;
+    height: 54px;
+    border-radius: 16px;
+    color: blue;
+    background-color: transparent;
+    border-color: blue;
+  }
+
+  .smallFonts {
+    margin-right: 10px;
+    color: rgb(92, 102, 123);
+    font-weight: 600;
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+

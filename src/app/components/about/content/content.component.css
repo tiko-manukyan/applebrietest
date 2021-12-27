@@ -1,0 +1,41 @@
+h1 {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.header p {
+  text-align: center;
+  font-size: 30px;
+  color: #b0bec5;
+}
+
+#aboutTools {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#title {
+  margin-left: 170px;
+}
+
+.titleParagraph {
+  color: #b0bec5;
+  border: 1px solid transparent;
+  width: 250px;
+  box-shadow: 3px 3px darkgrey;
+}
+
+#startButton {
+  padding: 22px 49px 21px 41px;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 20px;
+  color: white;
+  background-color: #00e0bb;
+  margin-left: 384px;
+  margin-top: 144px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 5px 5px #b0bec5;
+
+}
+

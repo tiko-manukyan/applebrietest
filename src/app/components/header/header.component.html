@@ -1,0 +1,19 @@
+<div class="header" (scroll)="onScroll()" [ngClass]="isScrolling ? 'headerToScroll' : 'header'">
+  <nav class="navbar">
+    <div class="container image mx-auto">
+      <img src="../../../assets/icons/headerIcon.jpeg"  routerLink="/">
+    </div>
+    <a href="javascript:void(0)" class="pe-5" (click)="isOpenSideBar = true">
+      <img src="./assets/icons/menu_white_36dp.svg">
+    </a>
+  </nav>
+</div>
+
+<div [ngClass]="{open: isOpenSideBar}" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="isOpenSideBar = false">&times;</a>
+  <a href="#" routerLink="/">Home</a>
+  <a href="#" routerLink="/rates">Rates</a>
+  <a href="#" routerLink="/employees">Employees</a>
+  <a href="#" routerLink="/aboutus">About Us</a>
+</div>
+
