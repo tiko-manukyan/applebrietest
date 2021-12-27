@@ -9,7 +9,7 @@ import {ApiService} from '../../services/api.service';
 })
 export class RatesComponent implements OnInit {
   public allCurrentExchanges: any;
-  public ratesLimit = 10;
+  public ratesLimit = 20;
   public selectOptionsExchanges: any = [];
   public convertResult: any;
   public convertOneCost: any;

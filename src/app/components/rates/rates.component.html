@@ -1,76 +1,67 @@
-<div
-  class="container mt-5 d-grid"
-  *ngIf="allCurrentExchanges">
-  <table>
-    <tr>
-      <th>
-        {{ allCurrentExchanges.base }}
-      </th>
-    </tr>
-    <tr *ngFor="let change of allCurrentExchanges.rates | keyvalue | slice :  0: ratesLimit">
-      <td>{{ change.key }}</td>
-      <td>{{ change.value }}</td>
-    </tr>
-  </table>
-  <div class="mt-2">
-    <button
-      class="btn btn-info" (click)="onShowMoreRates()">Show More Rates</button>
-    <hr>
-  </div>
-</div>
-
-<div class=" container">
-  <div class="d-flex">
-    <div class="row">
-      <label>Amount:</label>
-      <input
-        onkeypress="return event.charCode >= 48"
-        class="inputValues" type="number" min="1" value="1" #amount>
-    </div>
-    <div class="row">
-      <label>From:</label>
-      <select
-        #from
-        class="inputValues">
-        <option
-          *ngFor="let value of selectOptionsExchanges">{{ value }}</option>
-      </select>
-    </div>
-    <div class="row arrowImage" (click)="onSwapValues()">
-        <img src="./assets/icons/swap_horiz_black_24dp.svg">
-    </div>
-
-    <div class="row">
-      <label>To:</label>
-      <select
-        #to
-        class="inputValues">
-        <option
-          *ngFor="let value of selectOptionsExchanges">{{ value }}</option>
-      </select>
+<div *ngIf="allCurrentExchanges">
+  <div
+    class="container mt-5 d-grid">
+    <table>
+      <tr>
+        <th>
+          {{ allCurrentExchanges.base }}
+        </th>
+      </tr>
+      <tr *ngFor="let change of allCurrentExchanges.rates | keyvalue | slice :  0: ratesLimit">
+        <td>{{ change.key }}</td>
+        <td>{{ change.value }}</td>
+      </tr>
+    </table>
+    <div class="mt-2">
+      <button
+        class="btn btn-info" (click)="onShowMoreRates()">Show More Rates</button>
+      <hr>
     </div>
   </div>
-  <div class="container d-flex">
-    <div class="text-center mt-5">
-      <button class="convertButton" type="button" (click)="onConvertExchanges(amount.value)">Convert</button>
-    </div>
-    <div
-      *ngIf="convertResult"
-      class=" container col-5 mt-5 text-center convertResult">
+
+  <div class=" container convertContent">
+    <div class="d-flex">
       <div class="row">
-        <span class="smallFonts">{{ amount.value }} {{ from.value }} =</span> <span class="fs-1 ml-4">{{ convertResult }} {{ to.value }}</span>
+        <label><b>Amount:</b></label>
+        <input
+          onkeypress="return event.charCode >= 48"
+          class="inputValues" type="number" min="1" value="1" #amount>
       </div>
-      <div class="fw-lighter">1 {{ from.value }} = {{ convertOneCost  }} {{ to.value }}</div>
+      <div class="row">
+        <label><b>From:</b></label>
+        <select
+          #from
+          class="inputValues">
+          <option
+            *ngFor="let value of selectOptionsExchanges">{{ value }}</option>
+        </select>
+      </div>
+      <div class="row arrowImage" (click)="onSwapValues()">
+        <img src="./assets/icons/swap_horiz_black_24dp.svg">
+      </div>
+
+      <div class="row">
+        <label><b>To:</b></label>
+        <select
+          #to
+          class="inputValues">
+          <option
+            *ngFor="let value of selectOptionsExchanges">{{ value }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="container d-flex">
+      <div class="text-center mt-5">
+        <button class="convertButton" type="button" (click)="onConvertExchanges(amount.value)">Convert</button>
+      </div>
+      <div
+        *ngIf="convertResult"
+        class=" container col-5 mt-5 text-center convertResult">
+        <div class="row">
+          <span class="smallFonts">{{ amount.value }} {{ from.value }} =</span> <span class="fs-1 ml-4">{{ convertResult }} {{ to.value }}</span>
+        </div>
+        <div class="fw-lighter">1 {{ from.value }} = {{ convertOneCost  }} {{ to.value }}</div>
+      </div>
     </div>
   </div>
-
 </div>
-
-
-
-
-
-
-
-
-

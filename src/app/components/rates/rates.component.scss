@@ -5,6 +5,8 @@
 }
 
   .inputValues {
+    margin-top: 20px;
+    margin-left: 10px;
     box-sizing: border-box;
     background-color: white;
     width: 230px;
@@ -18,12 +20,13 @@
     &:hover {
       cursor: pointer;
     }
+    background-color: white;
     border: 1px solid gray;
     width: 53px;
     border-radius: 283px;
     height: 54px;
-    margin-top: 23px;
-    margin-right: 62px;
+    margin-top: 43px;
+    margin-right: 50px;
     align-items: center;
   }
 
@@ -47,5 +50,13 @@
     font-weight: 600;
     font-size: 1.4rem;
     max-width: 100%;
+  }
+
+  .convertContent {
+    box-shadow: rgb(35 55 80 / 30%) 0px 6px 12px;
+    border-radius: 10px;
+    height: 400px;
+    margin-bottom: 100px ;
+    background-color: white;
   }
 
