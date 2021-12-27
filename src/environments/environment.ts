@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  BASE_URL: 'http://data.fixer.io/api/latest'
+  BASE_URL: 'http://data.fixer.io/api/latest',
+  accessKey: '?access_key=4e43487eb603dbbaa152de1a8edda822'
+
 };
 
 /*

@@ -1,8 +1,4 @@
-import {Component, Input, OnInit, SimpleChange} from '@angular/core';
-
-interface onChanges {
-  ngOnChanges(changes: SimpleChange): void
-}
+import {Component, Input, OnInit, OnChanges} from '@angular/core';
 
 
 
@@ -11,17 +7,17 @@ interface onChanges {
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit, onChanges {
+export class MapComponent implements OnInit, OnChanges {
   @Input() selectedUser: any
   public center: any;
   public markers: any
   public options: google.maps.MapOptions = {
     mapTypeId: 'terrain',
-    zoomControl: false,
+    zoomControl: true,
     scrollwheel: false,
     disableDoubleClickZoom: true,
-    maxZoom: 15,
-    minZoom: 8,
+   // maxZoom: 15,
+   // minZoom: 8,
 
   };
   public currentZoom = 12;
@@ -31,13 +27,13 @@ export class MapComponent implements OnInit, onChanges {
   ngOnInit(): void {}
 
   ngOnChanges(changes: any) {
-    navigator.geolocation.getCurrentPosition((position) => {
+    // navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: +this.selectedUser.location.coordinates.latitude,
         lng: +this.selectedUser.location.coordinates.longitude,
       }
       this.addMarker(this.selectedUser)
-    });
+    // });
   }
 
   addMarker(employee: any) {
@@ -54,10 +50,4 @@ export class MapComponent implements OnInit, onChanges {
       options: { animation: google.maps.Animation.BOUNCE },
     }
   }
-
-  zoomIn() { this.currentZoom++ }
-
-  zoomOut() { this.currentZoom-- }
-
-
 }

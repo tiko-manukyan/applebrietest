@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 export class ApiService {
 
   private BASE_URL = environment.BASE_URL;
-  private accessKey = '?access_key=33d5c9e2885fcee9d802190aa9702bf3';
+  private accessKey = environment.accessKey;
   private employees_URL = 'https://randomuser.me/api?results=20'
 
   constructor(private http: HttpClient) { }
@@ -25,9 +25,6 @@ export class ApiService {
   getAllEmployees(): Observable<any> {
     return this.http.get(this.employees_URL);
   }
-
-
-
 
 
 }

@@ -1,14 +1,18 @@
-  <div class="container mt-4" >
-    <ul class="list-group" >
-      <li class="list-group-item d-flex justify-content-between align-items-center" role="button"
-          *ngFor="let user of employees[0]"
-          (click)="onSelectEmployeeLocation(user)">
-        {{ user.name.first }}  {{ user.name.last }}
-        <span class="badge bg-primary rounded-pill">{{ user.location.country }}</span>
-      </li>
-    </ul>
-  </div>
-  <div class="container mt-3 mx-auto">
-    <app-map *ngIf="selectedEmployee" [selectedUser]="selectedEmployee"></app-map>
-  </div>
+<div class="container mt-4" >
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let user of employees" (click)="onSelectEmployeeLocation(user)">
+      <td>{{  user.name.first}}   </td>
+      <td>{{ user.name.last }}</td>
+      <td><span>{{ user.location.country }}</span></td>
+    </tr>
+  </table>
+</div>
+<div class="container mt-3">
+  <app-map *ngIf="selectedEmployee" [selectedUser]="selectedEmployee"></app-map>
+</div>
 

@@ -1,0 +1,17 @@
+table {
+  border-collapse: collapse;
+  border-radius: 11px;
+  box-shadow: 5px 16px 14px -11px #666;
+  width: 100%;
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    cursor: pointer;
+    background-color: #ddd;
+  }
+
+  td {
+    border: 1px solid #ccc;
+  }
+}

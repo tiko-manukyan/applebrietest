@@ -7,7 +7,7 @@ import {ApiService} from '../../services/api.service';
   styleUrls: ['./employees.component.scss'],
 })
 export class EmployeesComponent implements OnInit {
-   selectedEmployee: any
+  public selectedEmployee: any
   public employees: any[] = [];
 
   constructor(private api: ApiService) { }
@@ -16,7 +16,7 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
     this.api.getAllEmployees()
       .subscribe(employees => {
-        this.employees.push(employees.results)
+        this.employees = employees.results;
       })
   }
 

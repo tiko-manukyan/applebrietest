@@ -13,6 +13,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MapComponent } from './components/employees/map/map.component';
 import { ContentComponent} from './components/about/content/content.component';
 import { AboutHeaderComponent } from './components/about/about-header/about-header.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AboutHeaderComponent } from './components/about/about-header/about-head
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

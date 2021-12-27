@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onEmployeePage(): any {
+  toEmployeesPage(): any {
     this.router.navigate(['/employees']);
   }
 
